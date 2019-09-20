@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card bg-dark my-5">
+        <div class="card-body">
+          <h2 class="card-title text-center text-white py-3">{{ title }}</h2>
+          <ul class="text-center list-inline py-3">
+            <li class="list-inline-item"><a routerLink="/addplayer" class="btn btn-info">Set Player</a></li>
+            <li class="list-inline-item">
+              <a class="btn btn-info disabled" *ngIf="!activePlayer.name">Play</a>
+              <a routerLink="/play" class="btn btn-info" *ngIf="activePlayer.name">Play</a>
+            </li>
+            <li class="list-inline-item"><a routerLink="/players" class="btn btn-info" >Player list</a></li>
+          </ul>
+          <p class="text-center text-info" *ngIf="activePlayer.name">Active player: {{ activePlayer.name }}</p>
+        </div>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
